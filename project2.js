@@ -1,0 +1,16 @@
+let textbox=document.getElementById("textbox");
+
+textbox.addEventListener("input",function(){
+   var text = this.value;
+   let char = text.length;
+
+   document.getElementById("char").innerHTML = char;
+
+   text=text.trim(); // removes Starting and Ending Spaces
+   let words = text.split(" ");
+   let cleanlist = words.filter(function(elm){
+       return elm != "";
+   });
+  
+   document.getElementById("word").innerHTML = cleanlist.length;
+});
